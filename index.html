@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Neo Recipes</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Set Apple icons for when prototype is saved to home screen -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch-icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch-icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/touch-icons/apple-touch-icon-57x57.png">
+    <link rel="stylesheet" href="css/animate-custom.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    
+    <link rel="stylesheet" href="css/junior.css">
+    <!-- Include the compiled Ratchet CSS -->
+    <link rel="stylesheet" href="css/ratchet.css">
+    <link rel="stylesheet" href="css/app.css">
+
+  </head>
+  <body>
+
+        <div id="app-container">
+            <div id="app-main"></div>
+            
+        </div>
+<footer class="hide white">
+   <nav class="bar-tab">
+    <ul class="tab-inner">
+      <li class="tab-item active">
+        <a id = "recipe" href="">
+             <span class="icon  icon-32 icon-food"></span>
+          <div class="tab-label">Receipes</div>
+        </a>
+      </li>
+      <li class="tab-item ">
+        <a id="search" href="">
+          <span class="icon  icon-32 icon-search"></span>
+          <div class="tab-label">Search</div>
+        </a>
+      </li>
+
+      <li class="tab-item">
+        <a id="favorite"  href="">
+          <span class="icon  icon-32 icon-heart"></span>
+          <div class="tab-label">Favorites</div>
+        </a>
+      </li>
+      <li class="tab-item">
+        <a  id="settings" href="">
+          <span class="icon  icon-32 icon-cogs"></span>
+          <div class="tab-label">Settings</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  </footer>
+
+        <script src="libs/modernizr.custom.15848.js"></script>
+        <script src="libs/zepto.min.js"></script>
+        <script src="libs/lodash.min.js"></script>
+        <script src="libs/backbone-min.js"></script>
+        <script src="libs/junior.js"></script>
+        <script src="libs/cordova-2.5.0.js"></script>
+        <script src="libs/mustache.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/views/main.js"></script>
+        <script src="js/views/dishoftheday.js"></script>
+        <script src="js/views/recipe.js"></script>
+        <script src="js/views/detail.js"></script>
+        <script src="js/views/search.js"></script>
+        <script src="js/views/settings.js"></script>
+        <script src="js/views/favorite.js"></script>
+        
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+ 
+
+
+      $(document).on('click', 'footer>nav>ul>li>a', function() {
+
+        $(this).parent().siblings().removeClass('active');
+        $(this).parent().addClass('active');
+
+
+      });
+    $(document).ready(function () {
+
+         startApp();
+        // Stuff to do as soon as the DOM is ready;
+    });
+
+$(document).on('click', '#recipe', function () {
+        Jr.Navigator.navigate('recipe', {
+            trigger: true,
+                   animation: {
+                // Do a stacking animation and slide to the left.
+                type: Jr.Navigator.animations.SLIDE_STACK,
+                direction: Jr.Navigator.directions.LEFT
+            }
+        });
+        return false;
+    });
+$(document).on('click', '#search', function () {
+        Jr.Navigator.navigate('search', {
+            trigger: true,
+                   animation: {
+                // Do a stacking animation and slide to the left.
+                type: Jr.Navigator.animations.SLIDE_STACK,
+                direction: Jr.Navigator.directions.LEFT
+            }
+        });
+        return false;
+   });
+      $(document).on('click', '#favorite', function () {
+        Jr.Navigator.navigate('favorite', {
+            trigger: true,
+                   animation: {
+                // Do a stacking animation and slide to the left.
+                type: Jr.Navigator.animations.SLIDE_STACK,
+                direction: Jr.Navigator.directions.LEFT
+            }
+        });
+        return false;
+  });
+
+      $(document).on('click', '#settings', function () {
+        Jr.Navigator.navigate('settings', {
+            trigger: true,
+                   animation: {
+                // Do a stacking animation and slide to the left.
+                type: Jr.Navigator.animations.SLIDE_STACK,
+                direction: Jr.Navigator.directions.LEFT
+            }
+        });
+        return false;
+ });
+
+    
+</script>
+
+
+
